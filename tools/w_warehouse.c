@@ -50,7 +50,7 @@
 #include "nulls.h"
 #include "tdefs.h"
 
-struct W_WAREHOUSE_TBL g_w_warehouse;
+struct W_WAREHOUSE_TBL g_w_warehouse_ww;
 
 /*
 * mk_warehouse
@@ -65,7 +65,7 @@ mk_w_warehouse (void* row, ds_key_t index)
    tdef *pT = getSimpleTdefsByNumber(WAREHOUSE);
 
 	if (row == NULL)
-		r = &g_w_warehouse;
+		r = &g_w_warehouse_ww;
 	else
 		r = row;
 	
@@ -106,7 +106,7 @@ pr_w_warehouse(void *row)
 	char szTemp[128];
 
 	if (row == NULL)
-		r = &g_w_warehouse;
+		r = &g_w_warehouse_ww;
 	else
 		r = row;
 
@@ -157,7 +157,7 @@ ld_w_warehouse(void *pSrc)
 	struct W_WAREHOUSE_TBL *r;
 		
 	if (pSrc == NULL)
-		r = &g_w_warehouse;
+		r = &g_w_warehouse_ww;
 	else
 		r = pSrc;
 	

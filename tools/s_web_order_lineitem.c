@@ -51,7 +51,7 @@
 #include "scaling.h"
 #include "scd.h"
 
-struct S_WEB_ORDER_LINEITEM_TBL g_s_web_order_lineitem;
+struct S_WEB_ORDER_LINEITEM_TBL g_s_web_order_lineitem_wol;
 extern struct S_WEB_ORDER_TBL g_s_web_order;
 extern int nItemIndex;
 
@@ -82,13 +82,13 @@ mk_s_web_order_lineitem(void *pDest, ds_key_t kIndex)
       nItemCount;
 	
 	if (pDest == NULL)
-		r = &g_s_web_order_lineitem;
+		r = &g_s_web_order_lineitem_wol;
 	else
 		r = pDest;
 
 	if (!bInit)
 	{
-		memset(&g_s_web_order_lineitem, 0, sizeof(struct S_WEB_ORDER_LINEITEM_TBL));
+		memset(&g_s_web_order_lineitem_wol, 0, sizeof(struct S_WEB_ORDER_LINEITEM_TBL));
 		strtodec(&dMin, "1.00");
 		strtodec(&dMax, "1000.00");
 		strtodt(&dtMax, TODAYS_DATE);
@@ -144,7 +144,7 @@ pr_s_web_order_lineitem(void *pSrc)
 	struct S_WEB_ORDER_LINEITEM_TBL *r;
 	
 	if (pSrc == NULL)
-		r = &g_s_web_order_lineitem;
+		r = &g_s_web_order_lineitem_wol;
 	else
 		r = pSrc;
 	
@@ -185,7 +185,7 @@ ld_s_web_order_lineitem(void *pSrc)
 	struct S_WEB_ORDER_LINEITEM_TBL *r;
 		
 	if (pSrc == NULL)
-		r = &g_s_web_order_lineitem;
+		r = &g_s_web_order_lineitem_wol;
 	else
 		r = pSrc;
 	

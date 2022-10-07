@@ -49,7 +49,7 @@
 #include "nulls.h"
 #include "tdefs.h"
 
-struct CATALOG_PAGE_TBL g_w_catalog_page;
+struct CATALOG_PAGE_TBL g_w_catalog_page_wcp;
 
 /*
 * Routine: mk_catalog_page()
@@ -84,7 +84,7 @@ mk_w_catalog_page (void *row, ds_key_t index)
    tdef *pTdef = getSimpleTdefsByNumber(CATALOG_PAGE);
 
 	if (row == NULL)
-		r = &g_w_catalog_page;
+		r = &g_w_catalog_page_wcp;
 	else
 		r = row;
 	
@@ -154,7 +154,7 @@ pr_w_catalog_page(void *row)
 	struct CATALOG_PAGE_TBL *r;
 
 	if (row == NULL)
-		r = &g_w_catalog_page;
+		r = &g_w_catalog_page_wcp;
 	else
 		r = row;
 

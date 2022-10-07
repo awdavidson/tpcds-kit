@@ -56,7 +56,7 @@
 #include "tdefs.h"
 #include "scd.h"
 
-struct W_WEB_SITE_TBL g_w_web_site;
+struct W_WEB_SITE_TBL g_w_web_site_wws;
 static struct W_WEB_SITE_TBL g_OldValues;
 
 /*
@@ -93,7 +93,7 @@ mk_w_web_site (void *row, ds_key_t index)
    tdef *pT = getSimpleTdefsByNumber(WEB_SITE);
 	
 	if (row == NULL)
-		r = &g_w_web_site;
+		r = &g_w_web_site_wws;
 	else
 		r = row;
 
@@ -203,7 +203,7 @@ pr_w_web_site(void *row)
 
 		
 	if (row == NULL)
-		r = &g_w_web_site;
+		r = &g_w_web_site_wws;
 	else
 		r = row;
 
@@ -266,7 +266,7 @@ ld_w_web_site(void *pSrc)
 	struct W_WEB_SITE_TBL *r;
 		
 	if (pSrc == NULL)
-		r = &g_w_web_site;
+		r = &g_w_web_site_wws;
 	else
 		r = pSrc;
 	
